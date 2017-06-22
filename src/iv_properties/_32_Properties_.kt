@@ -3,9 +3,13 @@ package iv_properties
 import util.TODO
 import util.doc32
 
-class PropertyExample() {
+class PropertyExample {
     var counter = 0
-    var propertyWithCounter: Int? = todoTask32()
+    var propertyWithCounter: Int? = null
+        set(v){
+            field = v // Kotlin provides an automatic backing field which can be accessed using the field identifier
+            counter++
+        }
 }
 
 fun todoTask32(): Nothing = TODO(
